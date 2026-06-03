@@ -3,9 +3,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# =========================
+
 # Load Model Files
-# =========================
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,9 +21,8 @@ feature_columns = joblib.load(
     BASE_DIR / "models" / "feature_columns.pkl"
 )
 
-# =========================
-# App UI
-# =========================
+
+
 
 st.set_page_config(
     page_title="Customer Churn Prediction",
@@ -36,9 +35,9 @@ st.markdown(
     "Predict whether a customer is likely to churn."
 )
 
-# =========================
+
 # Inputs
-# =========================
+
 
 tenure = st.slider(
     "Tenure (Months)",
@@ -76,9 +75,9 @@ partner = st.selectbox(
 
 avg_monthly_spend = total_charges / (tenure + 1)
 
-# =========================
+
 # Prediction
-# =========================
+
 
 if st.button("Predict Churn"):
 
